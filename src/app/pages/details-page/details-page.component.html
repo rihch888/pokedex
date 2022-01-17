@@ -1,0 +1,115 @@
+<div class="pokemon-details-background">
+    <div class="pokemon-details">
+        <div class="details-header">
+            <div class="prev-pokemon" (click)="goToPokemon(pokemon.prev_pokemon.id)" >
+                <img src="assets/images/arrow2.png" >
+                <p *ngIf="pokemon.prev_pokemon" class="prev-id">N.º {{ pokemon.prev_pokemon.id.toString().padStart(3, "0") }}</p><p *ngIf="pokemon.prev_pokemon" class="prev-name">{{ pokemon.prev_pokemon.name.charAt(0).toUpperCase() + pokemon.prev_pokemon.name.slice(1) }}</p>
+            </div>
+            <div class="next-pokemon" (click)="goToPokemon(pokemon.next_pokemon.id)">
+                <p *ngIf="pokemon.next_pokemon" class="next-id">N.º {{ pokemon.next_pokemon.id.toString().padStart(3, "0") }}</p><p *ngIf="pokemon.next_pokemon" class="next-name">{{ pokemon.next_pokemon.name.charAt(0).toUpperCase() + pokemon.next_pokemon.name.slice(1) }}</p>
+                <img src="assets/images/arrow2.png" >
+            </div>
+        </div>
+        <div class="pokemon-name-id">
+            <h1 *ngIf="pokemon.name">{{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }} N.º{{ pokemon.id.toString().padStart(3, "0") }}</h1>
+        </div>
+        <div class="detail-content">
+            <div class="detail-content-1">
+                <div class="pokemon-image">
+                    <img *ngIf="loading" src="assets/images/loading1.gif" >
+                    <img [hidden]="loading" (load)="onLoad()" *ngIf="pokemon.image" [src]="pokemon.image" (error)="setDefaultPic()" width="400px" >
+                </div>
+                <div class="stats">
+                    <!--<p>Puntos de base</p>-->
+                    <img src="assets/images/puntos-base.PNG" width="440px">
+                </div>
+            </div>
+            <div class="detail-content-2">
+                <p class="pokemon-description" >{{ pokemon.description }}</p>
+                <div class="versions">
+                    <p>Versiones:</p>
+                    <img src="assets/images/poke-blue.png">
+                    <img src="assets/images/poke-red.png" width="20px">
+                </div>
+                <div class="poke-details">
+                    <div class="poke-details-1">
+                        <p class="poke-details-title">Altura</p>
+                        <p class="poke-details-value">{{ pokemon.height }} m</p>
+                        <p class="poke-details-title">Peso</p>
+                        <p class="poke-details-value">{{ pokemon.weight }} kg</p>
+                        <p class="poke-details-title">Sexo</p>
+                        <p class="poke-details-value">M F</p>
+                    </div>
+                    <div class="poke-details-2">
+                        <p class="poke-details-title">Categoría</p>
+                        <p class="poke-details-value">{{ pokemon.category }}</p>
+                        <p class="poke-details-title">Habilidad</p>
+                        <p *ngIf="pokemon.name" class="poke-details-value"> {{ pokemon.ability.charAt(0).toUpperCase() + pokemon.ability.slice(1) }} </p>
+                    </div>
+                </div>
+                <div class="pokemon-types-content">
+                    <p>Tipo</p>
+                    <div class="pokemon-types">
+                        <p *ngIf="pokemon.type1" [style.background-color]="getColor(pokemon.type1)" >{{pokemon.type1.charAt(0).toUpperCase() + pokemon.type1.slice(1)}}</p>
+                        <p *ngIf="pokemon.type2" [style.background-color]="getColor(pokemon.type2)" >{{pokemon.type2.charAt(0).toUpperCase() + pokemon.type2.slice(1)}}</p>
+                    </div>
+                </div>
+                <div class="pokemon-weaknesses-content">
+                    <p>Debilidad</p>
+                    <div class="pokemon-weaknesses">
+                        <p *ngIf="pokemon.weakTo1" [style.background-color]="getColor(pokemon.weakTo1)">{{ pokemon.weakTo1.charAt(0).toUpperCase() + pokemon.weakTo1.slice(1) }}</p>
+                        <p *ngIf="pokemon.weakTo2" [style.background-color]="getColor(pokemon.weakTo2)">{{ pokemon.weakTo2.charAt(0).toUpperCase() + pokemon.weakTo2.slice(1) }}</p>
+                        <p *ngIf="pokemon.weakTo3" [style.background-color]="getColor(pokemon.weakTo3)">{{ pokemon.weakTo3.charAt(0).toUpperCase() + pokemon.weakTo3.slice(1) }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="detail-footer">
+                <p class="evo-text">Evoluciones</p>
+                <div class="evo-cards">
+                    <div *ngIf="pokemon.evo1" class="evo-card first" (click)="goToPokemon(pokemon.evo1.id)" >
+                        <div class="ring">
+                            <img *ngIf="loading" src="assets/images/loading1.gif" width="140px">
+                            <img [hidden]="loading" (load)="onLoad()" *ngIf="pokemon.evo1" [src]="pokemon.evo1.image" (error)="setDefaultPic()" width="125px" >
+                        </div>
+                        <div class="evo-name-id">
+                            <p class="evo-name" *ngIf="pokemon.evo1" >{{pokemon.evo1.name.charAt(0).toUpperCase() + pokemon.evo1.name.slice(1)}}</p><p class="evo-id" *ngIf="pokemon.evo1">N.º{{ pokemon.evo1.id.toString().padStart(3, "0") }}</p>
+                        </div>
+                        <div class="evo-types">
+                            <p *ngIf="pokemon.evo1" [style.background-color]="getColor(pokemon.evo1.type1)" >{{pokemon.evo1.type1.charAt(0).toUpperCase() + pokemon.evo1.type1.slice(1)}}</p>
+                            <p *ngIf="pokemon.evo1 && pokemon.evo1.type2" [style.background-color]="getColor(pokemon.evo1.type2)" >{{pokemon.evo1.type2.charAt(0).toUpperCase() + pokemon.evo1.type2.slice(1)}}</p>
+                        </div>
+                    </div>
+                    <div *ngIf="pokemon.evo2" class="evo-card second" (click)="goToPokemon(pokemon.evo2.id)">
+                        <div class="ring">
+                            <img *ngIf="loading" src="assets/images/loading1.gif" width="140px">
+                            <img [hidden]="loading" (load)="onLoad()" *ngIf="pokemon.evo2" [src]="pokemon.evo2.image" (error)="setDefaultPic()" width="125px" >
+                        </div>
+                        <div class="evo-name-id">
+                            <p class="evo-name" *ngIf="pokemon.evo2">{{pokemon.evo2.name.charAt(0).toUpperCase() + pokemon.evo2.name.slice(1)}}</p><p class="evo-id" *ngIf="pokemon.evo2">N.º{{ pokemon.evo2.id.toString().padStart(3, "0") }}</p>
+                        </div>
+                        <div class="evo-types">
+                            <p *ngIf="pokemon.evo2" [style.background-color]="getColor(pokemon.evo2.type1)" >{{pokemon.evo2.type1.charAt(0).toUpperCase() + pokemon.evo2.type1.slice(1)}}</p>
+                            <p *ngIf="pokemon.evo2  && pokemon.evo2.type2" [style.background-color]="getColor(pokemon.evo2.type2)" >{{pokemon.evo2.type2.charAt(0).toUpperCase() + pokemon.evo2.type2.slice(1)}}</p>
+                        </div>
+                    </div>
+                    <div *ngIf="pokemon.evo3" class="evo-card third" (click)="goToPokemon(pokemon.evo3.id)">
+                        <div class="ring">
+                            <img *ngIf="loading" src="assets/images/loading1.gif" width="140px">
+                            <img [hidden]="loading" (load)="onLoad()" *ngIf="pokemon.evo3" [src]="pokemon.evo3.image" (error)="setDefaultPic()" width="125px" >
+                        </div>
+                        <div class="evo-name-id">
+                            <p class="evo-name" *ngIf="pokemon.evo3">{{pokemon.evo3.name.charAt(0).toUpperCase() + pokemon.evo3.name.slice(1)}}</p><p class="evo-id" *ngIf="pokemon.evo3">N.º{{ pokemon.evo3.id.toString().padStart(3, "0") }}</p>
+                        </div>
+                        <div class="evo-types">
+                            <p *ngIf="pokemon.evo3" [style.background-color]="getColor(pokemon.evo1.type1)" >{{pokemon.evo3.type1.charAt(0).toUpperCase() + pokemon.evo3.type1.slice(1)}}</p>
+                            <p *ngIf="pokemon.evo3 && pokemon.evo3.type2" [style.background-color]="getColor(pokemon.evo1.type2)" >{{pokemon.evo3.type2.charAt(0).toUpperCase() + pokemon.evo3.type2.slice(1)}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="go-back-button" routerLink="/">Ir a la Pokedex</button>
+    </div>    
+</div>

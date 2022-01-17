@@ -1,0 +1,112 @@
+.home-page {
+    background: transparent url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
+    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    //display: flex;
+    background-color: #ffffff;
+    margin: 192px auto 32px;
+    padding: 25px 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.cards, .loading {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.home-buttons {
+    display: flow-root;
+    padding-left: 20px;
+    padding-right: 40px;
+}
+
+.more-pokemon-div {
+    display: flex;
+    justify-content: center;
+}
+
+.random-button {
+    float: left;
+}
+
+.select-order {
+    float: right;
+}
+
+@media (max-width: 1007px) {
+    .cards {
+        justify-content: center;
+    }
+    .home-buttons {
+        padding-left: 136px;
+        padding-right: 152px;
+    }
+}
+
+@media (max-width: 850px) {
+    .home-buttons {
+        padding-left: 50px;
+        padding-right: 70px;
+    }
+}
+
+@media (max-width: 767px) {
+    .home-buttons {
+        display: grid;
+        justify-content: center;
+    }
+    .random-button, .select-order {
+        width: 440px;
+    }
+    .content {
+        margin: 335px auto 32px;
+    }
+}
+
+@media (max-width: 515px) {
+    .home-buttons {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .content {
+        margin: 370px auto 32px;
+    }
+    .random-button, .select-order {
+        width: 320px;
+    }
+}
+
+@media (max-width: 515px) {
+    .home-buttons {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .content {
+        margin: 370px auto 32px;
+    }
+    .random-button, .select-order {
+        width: 320px;
+    }
+}
+
+@media (max-width: 333px) {
+    .home-buttons {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .content {
+        margin: 350px auto 32px;
+    }
+    .random-button, .select-order {
+        width: 260px;
+    }
+}

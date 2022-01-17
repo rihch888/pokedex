@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="card-img">
+        <img *ngIf="loading" src="assets/images/loading1.gif" >
+        <img [hidden]="loading" (load)="onLoad()" *ngIf="pokemon.image" [src]="pokemon.image" (error)="setDefaultPic()" >
+    </div>
+    <div class="card-details">
+        <p *ngIf="pokemon.id" class="pokemon-id">N.º{{ pokemon.id.toString().padStart(3, "0") }}</p>
+        <h2 *ngIf="pokemon.name" class="pokemon-name" >{{ (pokemon.name.length>15)? (pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) | slice:0:15)+'..':(pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1))  }}</h2>
+        <div class="pokemon-types">
+            <p *ngIf="pokemon.type1" [style.background-color]="getColor(pokemon.type1)" >{{pokemon.type1.charAt(0).toUpperCase() + pokemon.type1.slice(1)}}</p>
+            <p *ngIf="pokemon.type2" [style.background-color]="getColor(pokemon.type2)" >{{pokemon.type2.charAt(0).toUpperCase() + pokemon.type2.slice(1)}}</p>
+        </div>
+    </div>
+</div>

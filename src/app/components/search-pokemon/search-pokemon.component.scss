@@ -1,0 +1,114 @@
+@font-face {font-family: "Flexo-Bold"; src: url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.eot"); src: url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.woff") format("woff"), url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.svg#FlexoW01-Bold") format("svg"); }
+@font-face {font-family: "Flexo-Light"; src: url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.eot"); src: url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.woff") format("woff"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.svg#Flexo Light") format("svg"); }
+
+.search-area {
+    display: flex;
+}
+.search-form {
+    display: flex;
+}
+
+.left-search {
+    width: 400px;
+    font-family: "Flexo-Light",arial,sans-serif;
+    margin-right: 70px;
+}
+
+.left-search p {
+    padding-right: 20px;
+}
+
+.right-search {
+    width: 400px;
+}
+
+.green-box {
+    display: flex;
+    margin-bottom: 30px;
+    background-color: #4dad5b;
+    color: #ffffff;
+    border-radius: 7px;
+    padding: 10px 30px 10px 30px;
+    margin-top: 40px;
+    font-family: "Flexo-Light",arial,sans-serif;
+}
+
+.search-form input {
+    height: 30px;
+    border-radius: 5px;
+    border: solid;
+    border-color: #616161;
+    width: 60%;
+}
+
+.search-form button {
+    background-color: #ee6b2f;
+    color:#ffffff;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    background-image: url('/assets/images/search-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    width: 40px;
+}
+
+@media (max-width: 940px) {
+    .left-search {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 850px) {
+    .right-search {
+        width: 50%;
+        padding-right: 40px;
+        padding-left: 20px;
+    }
+    .left-search {
+        width: 50%;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .left-search p {
+        font-size: 14px;
+    }
+    .green-box {
+        font-size: 14px;
+    }
+  }
+
+  @media (max-width: 767px) {
+      .search-area {
+          display: contents;
+      }
+      .left-search, .right-search {
+        width: 70%;
+        padding-left: 125px;
+        }
+  }
+
+  @media (max-width: 550px) {
+        .left-search, .right-search {
+            width: 70%;
+            padding-left: 80px;
+        }
+    }
+
+@media (max-width: 550px) {
+    .left-search, .right-search {
+        width: 80%;
+        padding-left: 37px;
+    }
+}
+
+@media (max-width: 385px) {
+    .left-search, .right-search {
+        width: 85%;
+        padding-left: 25px;
+    }
+    .search-title {
+        font-size: 25px;
+    }
+}  

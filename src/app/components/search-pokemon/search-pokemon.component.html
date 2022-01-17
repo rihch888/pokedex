@@ -1,0 +1,17 @@
+<div class="search-area">
+    <div class="left-search">
+        <h1 class="search-title">Nombre o número</h1>
+        <div class="search-form">
+            <input type="text" class="search-input" #pokemonSearched >
+            <button (click)="onPokemonSearch(pokemonSearched.value)" ><!--<span>Buscar</span>--></button>
+        </div>
+        <p>¡Usa la búsqueda avanzada para encontrar Pokémon por su tipo, debilidad, habilidad y demás datos!</p>
+    </div>
+    
+    <div class="right-search">
+        <div class="green-box">
+            <p>Busca un Pokémon por su nombre o usando su número de la Pokédex Nacional.</p>
+        </div>
+    </div>
+</div>
+

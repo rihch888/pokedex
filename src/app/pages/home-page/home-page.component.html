@@ -1,0 +1,22 @@
+
+<div class="home-page">
+    <div class="header">
+        <app-header (pokemonSearched)="onPokemonSearch($event)" ></app-header>
+    </div>
+    <div class="content">
+        <div class="home-buttons">
+            <div class="random-button">
+                <app-random-pokemon [pokemonsUrl]="pokemonsUrl" (pokemons)="onRandomPokemon($event)"></app-random-pokemon>
+            </div>
+            <div class="select-order">
+                <app-select-order [pokemonsUrl]="pokemonsUrl" (pokemons)="onSelectOrder($event)" ></app-select-order>
+            </div>
+        </div>
+        <div class="cards">
+            <app-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon" routerLink="/details/{{pokemon.id}}" ></app-card>
+        </div>
+        <div class="more-pokemon-div">
+            <app-more-pokemon (morePokemon)="loadMorePokemon($event)"></app-more-pokemon>
+        </div>
+    </div>
+</div>

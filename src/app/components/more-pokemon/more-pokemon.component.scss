@@ -1,0 +1,14 @@
+@font-face {font-family: "Flexo-Bold"; src: url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.eot"); src: url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.woff") format("woff"), url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.svg#FlexoW01-Bold") format("svg"); }
+@font-face {font-family: "Flexo-Light"; src: url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.eot"); src: url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.woff") format("woff"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.svg#Flexo Light") format("svg"); }
+
+.more-pokemon {
+    background-color: #30a7d7;
+    color: #fff;
+    padding: 14px;
+    font-family: "Flexo-Light",arial,sans-serif;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: none;
+    cursor: pointer;
+}

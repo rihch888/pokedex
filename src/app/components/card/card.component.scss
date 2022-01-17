@@ -1,0 +1,50 @@
+@font-face {font-family: "Flexo-Bold"; src: url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.eot"); src: url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.woff") format("woff"), url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ec64cbf5e8b2e9e28bce3879c6812a1e.svg#FlexoW01-Bold") format("svg"); }
+@font-face {font-family: "Flexo-Light"; src: url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.eot"); src: url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.woff") format("woff"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.svg#Flexo Light") format("svg"); }
+
+.card {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.card-details {
+    margin-left: 15px;
+}
+
+.card-img {
+    background-color: #F2F2F2;
+    padding: 20px;
+}
+
+.card-img img {
+    width: 170px;
+}
+
+.pokemon-types {
+    display: flex;
+    margin-top: 2px;
+    margin-bottom: 40px;
+}
+
+.pokemon-types p {
+    font-family: "Flexo-Light",arial,sans-serif;
+    color: #FFFFFF;
+    margin-right: 10px;
+    margin-top: 2px;
+    margin-bottom: 0px;
+    padding: 1px 8px 1px 8px;
+    border-radius: 3px;
+}
+
+.pokemon-id {
+    font-family: "Flexo-Bold",arial,sans-serif;
+    color: #919191;
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+
+.pokemon-name {
+    font-family: "Flexo-Light",arial,sans-serif;
+    color: #313131;
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
